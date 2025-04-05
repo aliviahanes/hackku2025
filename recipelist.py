@@ -18,7 +18,7 @@ class RecipeList:
     def read(self):
        # skip_first_three_lines = 0
         line = self.gem_file.split('\n')
-        print(line)
+       # print(line)
 
         self.sort_glist(line)
     
@@ -36,7 +36,7 @@ class RecipeList:
                 
            
 
-        print(self.smaller_list)
+       # print(self.smaller_list)
         self.dic_sorted_list(self.smaller_list)
 
     def dic_sorted_list(self, ing_list):
@@ -68,4 +68,4 @@ class RecipeList:
     def print_dict(self):
         for key in self.recipe_cost_dictionary.keys():                              #debug
             print(f'Ingredient: {key}, Price: ${self.recipe_cost_dictionary[key]}') #debug
-
+
