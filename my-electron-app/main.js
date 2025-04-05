@@ -5,6 +5,7 @@ const path = require('node:path')
  * window management
  *************************************************************/
 
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
