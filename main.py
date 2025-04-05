@@ -11,7 +11,8 @@ user_food = input('What meals would you like recipes for?: (input as \'chicken p
 
 g_list = RecipeList(Gemini().cost_and_ing(user_food))
 
-print(g_list)
+g_list.print_dict()
+#print(g_list)
 
 #from user_interactiom import userInteract
 #good_input = False
