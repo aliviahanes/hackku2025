@@ -49,24 +49,23 @@ class RecipeList:
                 splitItem[1] = splitItem[1].replace(':', ' ')
                 splitItem[1] = splitItem[1].strip()
                 item_ing = splitItem[0]
-                item_price = splitItem[1]
-               # print(splitItem)
-                self.recipe_cost_dictionary[item_ing] = int(item_price)
+                item_price = splitItem[1][1:]
+              #  print(item_price)
+                self.recipe_cost_dictionary[item_ing] = float(item_price)
                    
                    
-                                #sort that way
+                                #sort that ways
            # else:               #else assume its formatted like 1. Onion: Price
-        for key in self.recipe_cost_dictionary.keys():                              #debug
-            print(f'Ingredient: {key}, Price: {self.recipe_cost_dictionary[key]}') #debug
+     #   for key in self.recipe_cost_dictionary.keys():                              #debug
+          #  print(f'Ingredient: {key}, Price: ${self.recipe_cost_dictionary[key]}') #debug
 
         for values in self.recipe_cost_dictionary.values():
             self.total_cost += values
-        print(self.total_cost)
+        #print(self.total_cost)
 
         return self.total_cost
         
-
-
-
-
-
+    def print_dict(self):
+        for key in self.recipe_cost_dictionary.keys():                              #debug
+            print(f'Ingredient: {key}, Price: ${self.recipe_cost_dictionary[key]}') #debug
+
