@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pantry Items</title> <!-- tab name -->
+    <link rel="stylesheet" href="styles.css"> <!-- connect to css -->
+</head>
+<body>
+    <h2>Your Pantry Items</h2> <!-- Page header -->
+    <input type="text" id="foodInput" placeholder="Enter a food..."> <!-- user input -->
+    <br> 
+    <button onclick="addFood()">Add Food</button> <!--calls the add food js function-->
+    <ul id="foodList">
+        <!--inner html-->
+    </ul> <!-- unordered list -->
+
+    <script>
+        // Add an event listener to the input field for the "Enter" key
+        document.getElementById("foodInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                addFood();
+            }
+        });
+    
+        // on load, get all foods from local storage
+        let foods = JSON.parse(localStorage.getItem('foods')) || [];
+    
+        function addFood() {
+            let foodText = document.getElementById("foodInput").value.trim();
+            if (foodText === "") {
+                alert("Nothing was entered");
+                return;
+            }
+    
+            // Check if the food already exists (case insensitive)
+            let existingFood = foods.find(food => food.name.toLowerCase() === foodText.toLowerCase());
+            if (existingFood) {
+                // Increment the quantity if the food exists
+                existingFood.quantity++;
+            } else {
+                // Add a new food with quantity 1
+                foods.push({ name: foodText, quantity: 1 });
+            }
+    
+            document.getElementById("foodInput").value = "";
+            saveFoods();
+            renderFoods();
+        }
+    
+        function deleteFood(index) {
+            foods.splice(index, 1);
+            saveFoods();
+            renderFoods();
+        }
+    
+        function renderFoods() {
+            let foodList = document.getElementById("foodList");
+            foodList.innerHTML = foods
+                .map(
+                    (food, index) =>
+                        `<li onclick="deleteFood(${index})">
+                            ${food.name} (x${food.quantity})
+                        </li>`
+                )
+                .join("");
+        }
+    
+        function saveFoods() {
+            localStorage.setItem('foods', JSON.stringify(foods));
+        }
+    
+        // Render foods when the page loads
+        renderFoods();
+    </script>
+</body>
+</html>
