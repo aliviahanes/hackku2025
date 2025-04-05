@@ -25,11 +25,14 @@ class RecipeList:
     def sort_glist(self, some_list):
         for index in range(len(some_list)):
             for num in range(len(some_list)):
-                print(f'{num}. INNN {some_list[index]}')
-                print(f'result: {f'{num} ' in some_list[index]}')
+            #    print(f'{num}. INNN {some_list[index]}')
+             #   print(f'result: {f'{num} ' in some_list[index]}')
            # print(some_list[index])
-                if f'{num}. ' in some_list[index]:
+                if some_list[index] in self.smaller_list:
+                    skip = 0
+                elif f'{num}. ' in some_list[index]:
                     self.smaller_list.append(some_list[index])
+                
            
 
         print(self.smaller_list)

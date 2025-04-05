@@ -6,7 +6,8 @@ from gemini import Gemini
 
 from recipelist import RecipeList
 
-g_list = RecipeList(Gemini().cost_of_ing('five cheese ziti'))
+
+g_list = RecipeList(Gemini().cost_of_ing('five cheese ziti, fried rice, vegetable soup'))
 
 print(g_list)
 
