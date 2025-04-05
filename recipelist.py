@@ -10,6 +10,7 @@ class RecipeList:
         self.giant_list = [] #might want to break down into ingredient and price list?
         self.recipe_cost_dictionary = {}
         self.smaller_list = []
+        self.total_cost = 0
         self.read()
 
 
@@ -50,13 +51,21 @@ class RecipeList:
                 item_ing = splitItem[0]
                 item_price = splitItem[1]
                # print(splitItem)
-                self.recipe_cost_dictionary[item_ing] = [item_price]
+                self.recipe_cost_dictionary[item_ing] = int(item_price)
                    
                    
                                 #sort that way
            # else:               #else assume its formatted like 1. Onion: Price
-        for key in self.recipe_cost_dictionary.keys():
-            print(f'Ingredient: {key}, Price: {self.recipe_cost_dictionary[key]}')
+        for key in self.recipe_cost_dictionary.keys():                              #debug
+            print(f'Ingredient: {key}, Price: {self.recipe_cost_dictionary[key]}') #debug
+
+        for values in self.recipe_cost_dictionary.values():
+            self.total_cost += values
+        print(self.total_cost)
+
+        return self.total_cost
+        
+
 
 
 
