@@ -1,0 +1,31 @@
+body {
+    background-color: #9c9cf2; /*a comment*/
+    margin: 10px;
+    font: 14px Comic Sans;
+}
+
+    #title {
+        color: rgb(52, 20, 160);
+        border-style: solid;
+        border-width: 1px;
+
+}
+
+    .goated {
+        color:antiquewhite;
+
+    }
+
+    #containerone {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #containertwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
