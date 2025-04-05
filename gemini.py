@@ -14,7 +14,7 @@ class Gemini:
       #  model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods} in a numbered list"
       #  )
         response = self._client.models.generate_content(                                                     #eventually should be for {user_food} or smthn
-        model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods}, combine ingredients (ex. if need onion for recipe1 and recipe2, i just need to list onion once) and list them all out in a numbered list with cost, make sure to number the ingredients"
+        model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods}, combine ingredients (ex. if need onion for recipe1 and recipe2, i just need to list onion once) and list them all out in a numbered list with cost, make sure to number the ingredients, organize list like grocery store"
         )
 
         print(response.text)
