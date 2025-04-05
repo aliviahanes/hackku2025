@@ -14,10 +14,12 @@ class Gemini:
       #  model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods} in a numbered list"
       #  )
         response = self._client.models.generate_content(                                                     #eventually should be for {user_food} or smthn
-        model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods}, combine ingredients and list them all out in a numbered list with cost, make sure to number the ingredients. This list should be optimized so that only the minimum number of ingredients are listed. List all ingredients in one list, do NOT separate them by meal. The formatting for one item should look like this: 1. *swiss cheese*: $6.00. If multiple packs of an item are needed, adjust the name and cost(where cost is the multiple of the base price by the quantity) to match the format of: 2. *2x swiss cheese* $18.00"
+        model="gemini-2.0-flash", contents=f"Give me JUST the estimated cost of ingredients for {foods}, combine ingredients and list them all out in a numbered list with cost, make sure to number the ingredients. This list should be optimized so that only the minimum number of ingredients are listed. List all ingredients in one list, do NOT separate them by meal. The formatting for one item should not have any spaces outside of those needed in an ingredient name. look like this: 1.*swiss cheese*$6.00"
         )
+        # #f"Give me JUST the estimated cost of ingredients for {foods}, combine ingredients (ex. if need onion for recipe1 and recipe2, i just need to list onion once) and list them all out in a numbered list with cost, make sure to number the ingredients, organize list like grocery store"
+        
 
-        print(response.text)
+       # print(response.text)
         return response.text
     
     def sort_by_ing(self,ingredients):
@@ -26,9 +28,25 @@ class Gemini:
         model="gemini-2.0-flash", contents=f"sort this list of ingredients by how you would find them in a grocery store"
         )
 
-        print(response.text)
+        #print(response.text)
         return response.text
 
+    def suggestion(self, user_suggest):
+        ## meal prep suggestions?
+
+
+        #   response = client.models.generate_content(
+        #   model="gemini-2.0-flash", contents="Explain how AI works in a few words"
+        #)
+        #print(response.text)
+
+        #PNOTE: takes a while to generate, maybe make loading screen ?
+        response = self._client.models.generate_content(                                                     #eventually should be for {user_food} or smthn
+        model="gemini-2.0-flash", contents=f"give me meals that {user_suggest}"
+        )
+
+        print(response.text)
+        return response.text
 
    
 '''

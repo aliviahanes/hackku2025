@@ -10,6 +10,7 @@ class RecipeList:
         self.giant_list = [] #might want to break down into ingredient and price list?
         self.recipe_cost_dictionary = {}
         self.smaller_list = []
+        self.total_cost = 0
         self.read()
 
 
@@ -17,7 +18,7 @@ class RecipeList:
     def read(self):
        # skip_first_three_lines = 0
         line = self.gem_file.split('\n')
-        print(line)
+       # print(line)
 
         self.sort_glist(line)
     
@@ -35,10 +36,15 @@ class RecipeList:
                 
            
 
-        print(self.smaller_list)
+       # print(self.smaller_list)
         self.dic_sorted_list(self.smaller_list)
 
     def dic_sorted_list(self, ing_list):
+        #for item in ing_list:
+            #if '*' in item:    #if its formatted like 1. **Onion:** price
+                   #nitem = item[6:]
+                   #nitem.replace('*', '')
+        
         for item in ing_list:
             if '*' in item:    #if its formatted like 1. **Onion:** price
                    nitem = item[6:]
@@ -48,10 +54,18 @@ class RecipeList:
                  #  self.recipe_cost_dictionary[item_ing] = [item_price]
                    
                    
-                                #sort that way
+                                #sort that ways
            # else:               #else assume its formatted like 1. Onion: Price
+     #   for key in self.recipe_cost_dictionary.keys():                              #debug
+          #  print(f'Ingredient: {key}, Price: ${self.recipe_cost_dictionary[key]}') #debug
 
+        for values in self.recipe_cost_dictionary.values():
+            self.total_cost += values
+        #print(self.total_cost)
 
-
-
+        return self.total_cost
+        
+    def print_dict(self):
+        for key in self.recipe_cost_dictionary.keys():                              #debug
+            print(f'Ingredient: {key}, Price: ${self.recipe_cost_dictionary[key]}') #debug
 
