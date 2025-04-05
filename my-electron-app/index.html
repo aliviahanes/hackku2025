@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>APP!</title>
+  </head>
+  <body>
+    <h1>Hello User!</h1>
+    <button onclick="location.href='pantry.html'">Go to Pantry Page</button>
+
+    <br>
+    <p> Made using Node.js <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.</p>
+  </body>
+
+  <script>
+    require('./renderer.js')
+  </script>
+</html>
