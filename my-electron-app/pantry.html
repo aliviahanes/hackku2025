@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="styles.css"> <!-- connect to css -->
 </head>
 <body>
-    <h2>Your Pantry Items</h2> <!-- Page header -->
+    <h2>Let's Eat</h2> <!-- Page header -->
+    <h3>Start Planning Your Meals For The Week!</h3>
     <input type="text" id="foodInput" placeholder="Enter a food..."> <!-- user input -->
     <br> 
+    <button onclick="clearList()">Clear</button> <!--calls the clear list js function-->
     <button onclick="addFood()">Add Food</button> <!--calls the add food js function-->
+
     <ul id="foodList">
         <!--inner html-->
     </ul> <!-- unordered list -->
@@ -51,6 +54,12 @@
             saveFoods();
             renderFoods();
         }
+
+        function clearList() {
+            foods = []; // Clear the foods array
+            saveFoods(); // Save the empty array to local storage
+            renderFoods(); // Re-render the list
+        }
     
         function renderFoods() {
             let foodList = document.getElementById("foodList");
@@ -58,7 +67,7 @@
                 .map(
                     (food, index) =>
                         `<li onclick="deleteFood(${index})">
-                            ${food.name} (x${food.quantity})
+                            ${food.name} (${food.quantity})
                         </li>`
                 )
                 .join("");
