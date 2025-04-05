@@ -39,11 +39,19 @@ class RecipeList:
         self.dic_sorted_list(self.smaller_list)
 
     def dic_sorted_list(self, ing_list):
+        #for item in ing_list:
+            #if '*' in item:    #if its formatted like 1. **Onion:** price
+                   #nitem = item[6:]
+                   #nitem.replace('*', '')
+        
         for item in ing_list:
-            if '*' in item:    #if its formatted like 1. **Onion:** price
-                   nitem = item[6:]
-                   nitem.replace('*', '')
-                   print(nitem)
+            if '*' in item: #avoids including intro section
+                ilist = item.split('*')
+                print(ilist) #testing lists correctly created
+                self.recipe_cost_dictionary[ilist[1]] = ilist[2]
+
+        print(self.recipe_cost_dictionary) #this is to be removed(?) later, purely for testing 
+                   #print(nitem)
 
                  #  self.recipe_cost_dictionary[item_ing] = [item_price]
                    
