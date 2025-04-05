@@ -1,3 +1,5 @@
+## meal prep suggestions?
+
 from google import genai
 
 client = genai.Client(api_key="AIzaSyCC50YnW_xy0SfDJkUjRY2aNVisniZmguE")
@@ -9,7 +11,7 @@ client = genai.Client(api_key="AIzaSyCC50YnW_xy0SfDJkUjRY2aNVisniZmguE")
 
 #PNOTE: takes a while to generate, maybe make loading screen ?
 response = client.models.generate_content(                                                     #eventually should be for {user_food} or smthn
-    model="gemini-2.0-flash", contents="Give me the estimated cost and list of ingredients for peanut butter jelly"
+    model="gemini-2.0-flash", contents=f"what are some good meal-prepping meals for {meal_per_week} days"
 )
 
 print(response.text)
