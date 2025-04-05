@@ -6,8 +6,10 @@ from gemini import Gemini
 
 from recipelist import RecipeList
 
+#meals_in_week = int(input('How many meals for a week?: '))
+user_food = input('What meals would you like recipes for?: (input as \'chicken pot pie, chicken fried rice, avocado toast\') ')
 
-g_list = RecipeList(Gemini().cost_and_ing('five cheese ziti, fried rice, pancakes'))
+g_list = RecipeList(Gemini().cost_and_ing(user_food))
 
 print(g_list)
 
@@ -31,19 +33,3 @@ meal_count = 0
   #          recipes.append(input(f'What meal do you want to prep? (Meal {meal_count}): ')) # could make a suggested:
 
 
-
-from google import genai
-
-client = genai.Client(api_key="AIzaSyCC50YnW_xy0SfDJkUjRY2aNVisniZmguE")
-
-#response = client.models.generate_content(
- #   model="gemini-2.0-flash", contents="Explain how AI works in a few words"
-#)
-#print(response.text)
-
-#PNOTE: takes a while to generate, maybe make loading screen ?
-response = client.models.generate_content(                                                    
-    model="gemini-2.0-flash", contents=f"what are some good meal-prepping meals for {meal_per_week} days"
-)
-
-print(response.text)
