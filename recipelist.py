@@ -41,8 +41,9 @@ class RecipeList:
     def dic_sorted_list(self, ing_list):
         for item in ing_list:
             if '*' in item:    #if its formatted like 1. **Onion:** price
-                   item = item[6:]
-                   print(item)
+                   nitem = item[6:]
+                   nitem.replace('*', '')
+                   print(nitem)
 
                  #  self.recipe_cost_dictionary[item_ing] = [item_price]
                    
