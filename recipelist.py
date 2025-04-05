@@ -40,17 +40,23 @@ class RecipeList:
 
     def dic_sorted_list(self, ing_list):
         for item in ing_list:
-            if '*' in item:    #if its formatted like 1. **Onion:** price
-                   nitem = item[6:]
-                   nitem.replace('*', '')
-                   print(nitem)
-
-                 #  self.recipe_cost_dictionary[item_ing] = [item_price]
+            if '*' in item:
+             #   item = item[5:] # get rid of num and first *
+                #item.replace(f'{item[]}*: ', ':')
+                splitItem = item.split('*')
+                splitItem.remove(splitItem[0])
+                splitItem[1] = splitItem[1].replace(':', ' ')
+                splitItem[1] = splitItem[1].strip()
+                item_ing = splitItem[0]
+                item_price = splitItem[1]
+               # print(splitItem)
+                self.recipe_cost_dictionary[item_ing] = [item_price]
                    
                    
                                 #sort that way
            # else:               #else assume its formatted like 1. Onion: Price
-
+        for key in self.recipe_cost_dictionary.keys():
+            print(f'Ingredient: {key}, Price: {self.recipe_cost_dictionary[key]}')
 
 
 
