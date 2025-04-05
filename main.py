@@ -6,7 +6,8 @@ from gemini import Gemini
 
 from recipelist import RecipeList
 
-g_list = RecipeList(Gemini().cost_of_ing('cereal'))
+g_list = RecipeList(Gemini().cost_of_ing('five cheese ziti'))
+
 print(g_list)
 
 #from user_interactiom import userInteract

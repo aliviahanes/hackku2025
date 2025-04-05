@@ -18,26 +18,19 @@ class RecipeList:
        # skip_first_three_lines = 0
         line = self.gem_file.split('\n')
         print(line)
- #       for item in line
-        self.sort_glist(line, len_of_file)
+
+        self.sort_glist(line)
     
 
     def sort_glist(self, some_list):
         for index in range(len(some_list)):
-            if '1. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '2. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '3. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '4. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '5. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '6. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
-            if '7. ' in some_list[index]:
-                self.smaller_list.append(some_list[index])
+            for num in range(len(some_list)):
+                print(f'{num}. INNN {some_list[index]}')
+                print(f'result: {f'{num} ' in some_list[index]}')
+           # print(some_list[index])
+                if f'{num}. ' in some_list[index]:
+                    self.smaller_list.append(some_list[index])
+           
 
         print(self.smaller_list)
 
