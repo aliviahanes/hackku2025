@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", system-ui;
+  background-image: url('Grocery/BG.png');
+  background-size: cover;
+  background-position: top center;  /* Ensure the background image starts from the top */
+  background-repeat: no-repeat;
+  height: 100vh; /* Ensure the background covers the entire height */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the content stretches full height of the page */
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 170px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+  color: #4b5563;
+}
+
+.nav-link-active {
+  color: #203858;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 170px;
+  background-color: transparent;
+}
+
+.grocery-list-container {
+  width: 100%;
+  max-width: 1245px;
+  padding: 40px;
+  border-radius: 40px;
+  background-color: #F4FFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bullet-list-wrapper {
+  background-color:#F4FFFF;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.grocery-items-grid {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.grocery-item {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.item-name {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.item-quantity {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+.summary-section {
+  width: 100%;
+  max-width: 1245px;
+  margin-top: 60px;
+}
+
+.total-amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.total-amount-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 26px;
+}
+
+.cost-container {
+  display: flex;
+  align-items: center;
+}
+
+.export-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.export-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.export-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 40px;
+}
+
+.export-description {
+  font-size: 24px;
+}
+
+.export-button {
+  background-color: #fff4e3;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .main-header {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px 60px;
+  }
+
+  .grocery-list-container {
+    max-width: 90%;
+  }
+
+  .grocery-list-wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    padding: 20px;
+  }
+
+  .grocery-list-title {
+    font-size: 48px;
+  }
+
+  .grocery-items-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .export-title {
+    font-size: 24px;
+  }
+}
