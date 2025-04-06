@@ -4,12 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Planning</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='plannercss.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css', _external=True) }}" />
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mealSections = ["breakfast", "lunch", "dinner"];
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Readex+Pro&family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+      mealSections.forEach((meal) => {
+        const input = document.getElementById(`${meal}-input`);
+        const saveButton = document.getElementById(`save-${meal}`);
+        const clearButton = document.getElementById(`clear-${meal}`);
+        const listContainer = document.createElement("ul");
+        listContainer.classList.add(`${meal}-list`);
+        input.parentElement.appendChild(listContainer);
+
+        const updateList = () => {
+          const storedItems = JSON.parse(localStorage.getItem(`${meal}-items`)) || [];
+          listContainer.innerHTML = "";
+          storedItems.forEach((item, index) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            listItem.classList.add("list-item");
+            listItem.addEventListener("click", () => {
+              storedItems.splice(index, 1);
+              localStorage.setItem(`${meal}-items`, JSON.stringify(storedItems));
+              updateList();
+            });
+            listContainer.appendChild(listItem);
+          });
+        };
+
+        saveButton.addEventListener("click", () => {
+          const value = input.value.trim();
+          if (value) {
+            const storedItems = JSON.parse(localStorage.getItem(`${meal}-items`)) || [];
+            storedItems.push(value);
+            localStorage.setItem(`${meal}-items`, JSON.stringify(storedItems));
+            input.value = "";
+            updateList();
+          }
+        });
+
+        clearButton.addEventListener("click", () => {
+          localStorage.removeItem(`${meal}-items`);
+          updateList();
+        });
+
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            saveButton.click();
+          }
+        });
+
+        updateList();
+      });
+    });
+      
+    </script>
   </head>
   <body>
     <div class="app-container">
@@ -35,106 +85,69 @@
           </div>
         </section>
 
+        <!-- Breakfast Section -->
         <section class="meal-section breakfast-section">
           <div class="meal-content">
             <h2 class="meal-title">Breakfast Recipe</h2>
-            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
-
             <div class="meal-selection">
               <div class="recipe-input-area">
                 <div class="input-container">
                   <input
                     type="text"
-                    placeholder="Enter Here"
+                    id="breakfast-input"
+                    placeholder="Enter Breakfast Recipe"
                     class="recipe-input"
                   />
                 </div>
                 <div class="button-group">
-                  <button class="clear-button">Clear</button>
-                  <button class="submit-button">Submit</button>
-                </div>
-              </div>
-
-              <div class="recipe-options">
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ae1cc6e63f4b341e82a8a9104b4f82455f59734" alt="Pancakes" class="recipe-image" />
-                  <span class="recipe-name">Pancakes</span>
-                </div>
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd93d45a274f44a76cef380ebd4c96be7e52a85c" alt="Scrambled Eggs" class="recipe-image" />
-                  <span class="recipe-name">Scrambled Eggs</span>
+                  <button id="clear-breakfast" class="clear-button">Clear</button>
+                  <button id="save-breakfast" class="submit-button">Save</button>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- Lunch Section -->
         <section class="meal-section lunch-section">
           <div class="meal-content">
             <h2 class="meal-title">Lunch Recipe</h2>
-            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
-
             <div class="meal-selection">
               <div class="recipe-input-area">
                 <div class="input-container">
                   <input
                     type="text"
-                    placeholder="Enter Here"
+                    id="lunch-input"
+                    placeholder="Enter Lunch Recipe"
                     class="recipe-input"
                   />
                 </div>
                 <div class="button-group">
-                  <button class="clear-button">Clear</button>
-                  <button class="submit-button">Submit</button>
-                </div>
-              </div>
-
-              <div class="recipe-options">
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1dc66072f518ff62924fa771c4cf06172c703a7" alt="Soup" class="recipe-image" />
-                  <span class="recipe-name">Soup</span>
-                </div>
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <span class="recipe-name">Spaghetti</span>
+                  <button id="clear-lunch" class="clear-button">Clear</button>
+                  <button id="save-lunch" class="submit-button">Save</button>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- Dinner Section -->
         <section class="meal-section dinner-section">
           <div class="meal-content">
             <h2 class="meal-title">Dinner Recipe</h2>
-            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
-
             <div class="meal-selection">
               <div class="recipe-input-area">
                 <div class="input-container">
                   <input
                     type="text"
-                    placeholder="Enter Here"
+                    id="dinner-input"
+                    placeholder="Enter Dinner Recipe"
                     class="recipe-input"
                   />
                 </div>
                 <div class="button-group">
-                  <button class="clear-button">Clear</button>
-                  <button class="submit-button">Submit</button>
-                </div>
-              </div>
-
-              <div class="recipe-options">
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/36ecac769e5076cafebc89ac3786f90ea0f5000f" alt="Pizza" class="recipe-image" />
-                  <span class="recipe-name">Pizza</span>
-                </div>
-                <div class="recipe-card">
-                  <div class="recipe-icon-placeholder"></div>
-                  <span class="recipe-name">Drumstick</span>
+                  <button id="clear-dinner" class="clear-button">Clear</button>
+                  <button id="save-dinner" class="submit-button">Save</button>
                 </div>
               </div>
             </div>
