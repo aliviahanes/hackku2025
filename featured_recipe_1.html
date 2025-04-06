@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chicken Noodle Soup Recipe</title>
     <style>
+        /* General body styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', cursive;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #87ceeb, #f4f4f4);
+            color: #333;
         }
 
+        /* Header styling */
         header {
-            background-color: #ad73e3;
-            color: white;
+            background: #6b8e23;
+            color: #fff;
             padding: 20px;
             text-align: center;
-        }
-s
-        main {
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #556b2f;
         }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 14px;
+            margin: 5px 0 0;
+        }
+
+        /* Main content styling */
+        main {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff8dc;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            border: 3px solid #deb887;
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 20px;
+            color: #6b8e23;
+        }
+
+        ul, ol {
+            padding-left: 40px;
+        }
+
+        ul li, ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
             margin-top: 20px;
+            padding: 10px;
+            background: #6b8e23;
+            color: white;
+            border-top: 5px solid #556b2f;
         }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
         }
 
-        ol {
-            padding-left: 20px;
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        .ingredient-list, .instruction-list {
-            margin-top: 10px;
+        /* Add a pixelated border effect */
+        main, header, footer {
+            border-radius: 0;
+            border: 4px solid #556b2f;
         }
 
+        /* Add a retro button style */
+        button {
+            font-family: 'Press Start 2P', cursive;
+            background: #6b8e23;
+            color: white;
+            border: 2px solid #556b2f;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: #556b2f;
+        }
     </style>
 </head>
 <body>
@@ -100,7 +148,7 @@ s
     </main>
 
     <footer>
-        <p>More</p>
+        <a href="fake_home.html">Back home</a>
     </footer>
 </body>
 </html>
