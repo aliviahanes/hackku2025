@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Planning</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Add two background images */
+      body {
+        font-family: "Readex Pro", sans-serif;
+        background: url('landing.jpg') top center no-repeat, url('path_to_second_image.jpg') bottom center no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      /* App container */
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #ddfdff;
+        position: relative;
+      }
+
+      /* Header */
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 48px 170px;
+      }
+
+      .home-icon,
+      .search-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-size: 22px;
+        font-family: "Readex Pro", sans-serif;
+        text-decoration: none;
+        color: #4b5563;
+      }
+
+      .nav-link-active {
+        color: #203858;
+      }
+
+      /* Main content */
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 170px;
+        background: url('Landing_page.png') center center no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+      }
+
+      /* Hero section */
+      .hero-section {
+        background-image: url('recipe_bg.png');
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #3b516d;
+        padding: 50px;
+        width: 100%;
+        max-width: 1600px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        border-radius: 0;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero-title {
+        color: #203858;
+        font-size: 64px;
+        font-family: "Press Start 2P", cursive;
+        text-align: center;
+      }
+
+      .hero-description {
+        color: #4b5563;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .create-meal-button {
+        background-image: url('Button.png');
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+        color: #203858;
+        font-size: 24px;
+        padding: 12px 40px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Meal sections */
+      .meal-section {
+        background-color: #f4ffff;
+        border-radius: 40px;
+        padding: 40px;
+        width: 100%;
+        max-width: 1324px;
+        margin-bottom: 60px;
+      }
+
+      .meal-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .meal-title {
+        color: #203858;
+        font-size: 32px;
+        font-family: "Press Start 2P", cursive;
+      }
+
+      .meal-subtitle {
+        color: #000;
+        font-size: 14px;
+      }
+
+      .meal-selection {
+        display: flex;
+        gap: 40px;
+      }
+
+      /* Recipe input area */
+      .recipe-input-area {
+        flex: 1;
+      }
+
+      .input-container {
+        background-color: #fff4e3;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .recipe-input {
+        width: 100%;
+        background: url('Button.png') center center no-repeat;
+        background-size: cover;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 12px;
+      }
+
+      .clear-button {
+        flex: 1;
+        border: 1px solid #a7b7cd;
+        color: #a7b7cd;
+        padding: 12px;
+        border-radius: 8px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .submit-button {
+        flex: 1;
+        background-color: #a7b7cd;
+        color: #ffffff;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Recipe options */
+      .recipe-options {
+        flex: 1;
+      }
+
+      .recipe-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .recipe-icon-placeholder {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .recipe-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      .recipe-name {
+        font-size: 20px;
+      }
+
+      /* Chatbot sections */
+      .chatbot-intro-section {
+        border: 8px solid #203858;
+        background-color: #f4ffff;
+        border-radius: 40px;
+        padding: 40px;
+        width: 100%;
+        max-width: 1324px;
+        margin-bottom: 60px;
+      }
+
+      .chatbot-intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .chatbot-intro-title {
+        color: #3b516d;
+        font-size: 48px;
+        font-family: "Press Start 2P", cursive;
+        text-align: center;
+      }
+
+      .chatbot-intro-description {
+        color: #3b516d;
+        font-size: 36px;
+        text-align: center;
+        letter-spacing: 5.4px;
+      }
+
+      .chatbot-title {
+        background-color: #98acda;
+        border-radius: 20px;
+        border: 4px solid #486489;
+        padding: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin-bottom: 60px;
+        color: #3b516d;
+        font-size: 36px;
+        font-family: "Press Start 2P", cursive;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .chatbot-container {
+        font-family: "Arial", cursive;
+        background-color: #f4ffff;
+        border: 4px solid #d0b690;
+        padding: 40px;
+        width: 100%;
+        max-width: 926px;
+        margin-bottom: 60px;
+      }
+
+      .chatbot-input-container {
+        background-color: #fff4e3;
+        border: 4px solid #d0b690;
+        padding: 12px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 926px;
+        margin-top: -70px;
+        margin-bottom: 80px;
+      }
+
+      .flower-background {
+        background-size: scale(0.5);
+        background-position: left;
+        padding: 20px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="main-header">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dbc75aed921b8495801dfb8007da8ed02c2515f" alt="Home" class="home-icon" />
+        <nav class="main-nav">
+          <a href="#" class="nav-link nav-link-active">Home</a>
+          <a href="#" class="nav-link">Recipes</a>
+          <a href="#" class="nav-link">Meal Plans</a>
+          <a href="#" class="nav-link">Grocery List</a>
+        </nav>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/269bf4782d87c310f2e9e26d3b06a4cb27c1f8f7" alt="Search" class="search-icon" />
+      </header>
+
+      <main class="main-content">
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">Choose Your Weekly Recipes</h1>
+            <p class="hero-description">
+              Select recipes for breakfast, lunch, and dinner
+            </p>
+            <button class="create-meal-button">CREATE YOUR MEAL</button>
+          </div>
+        </section>
+
+        <section class="meal-section breakfast-section">
+          <div class="meal-content">
+            <h2 class="meal-title">Breakfast Recipe</h2>
+            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
+
+            <div class="meal-selection">
+              <div class="recipe-input-area">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    placeholder="Enter Here"
+                    class="recipe-input"
+                  />
+                </div>
+                <div class="button-group">
+                  <button class="clear-button">Clear</button>
+                  <button class="submit-button">Submit</button>
+                </div>
+              </div>
+
+              <div class="recipe-options">
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Pancakes</span>
+                </div>
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Scrambled Eggs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="meal-section lunch-section">
+          <div class="meal-content">
+            <h2 class="meal-title">Lunch Recipe</h2>
+            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
+
+            <div class="meal-selection">
+              <div class="recipe-input-area">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    placeholder="Enter Here"
+                    class="recipe-input"
+                  />
+                </div>
+                <div class="button-group">
+                  <button class="clear-button">Clear</button>
+                  <button class="submit-button">Submit</button>
+                </div>
+              </div>
+
+              <div class="recipe-options">
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Soup</span>
+                </div>
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Spaghetti</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="meal-section dinner-section">
+          <div class="meal-content">
+            <h2 class="meal-title">Dinner Recipe</h2>
+            <p class="meal-subtitle">ADD YOUR RECIPE TO A MEAL PLAN</p>
+
+            <div class="meal-selection">
+              <div class="recipe-input-area">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    placeholder="Enter Here"
+                    class="recipe-input"
+                  />
+                </div>
+                <div class="button-group">
+                  <button class="clear-button">Clear</button>
+                  <button class="submit-button">Submit</button>
+                </div>
+              </div>
+
+              <div class="recipe-options">
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Pizza</span>
+                </div>
+                <div class="recipe-card">
+                  <div class="recipe-icon-placeholder"></div>
+                  <span class="recipe-name">Drumstick</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="chatbot-intro-section">
+          <div class="chatbot-intro-content">
+            <h2 class="chatbot-intro-title">Can't Decide?</h2>
+            <p class="chatbot-intro-description">
+              Type what you're in the mood for and our chatbot will help
+            </p>
+          </div>
+        </section>
+
+        <h2 class="chatbot-title">LET'S EAT! CHAT BOT</h2>
+
+        <div class="chatbot-container"><p>Hi! I'm here to help :)</p></div>
+
+        <div class="chatbot-input-container">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6bdb3dd4193024b4c0a2fd5c88b4420f69de88

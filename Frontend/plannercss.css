@@ -69,12 +69,14 @@ body {
 .hero-section {
   background-image: url('recipe_bg.png');
   background-size: cover;
-  /*background-size: contain; /* Ensures the entire image is visible */
+  background-size: contain; /* Ensures the entire image is visible */
+  background-repeat: no-repeat;
   background-position: center;
   color: #3b516d;
   padding: 50px;
   width: 100%;
-  max-width: 1245px;
+  max-width: 1600px;
+  margin-top: 60px;
   margin-bottom: 60px;
   border-radius: 0;
 }
