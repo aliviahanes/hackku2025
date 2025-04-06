@@ -6,7 +6,7 @@
 
 body {
   font-family: "Roboto", system-ui;
-  background-image: url('Grocery/BG.png');
+  background-image: url('/img/Grocery/BG.png');
   background-size: cover;
   background-position: top center;  /* Ensure the background image starts from the top */
   background-repeat: no-repeat;

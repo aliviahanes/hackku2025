@@ -21,36 +21,63 @@ body {
   background-color: #ddfdff;
   position: relative;
 }
-
-/* Header */
+* Header and Navigation */
 .main-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 48px 170px;
+  padding: 24px 48px;
 }
 
-.home-icon,
-.search-icon {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
   width: 35px;
   height: 35px;
 }
 
+.logo-text {
+  color: #203858;
+  font-family: "Readex Pro", sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+}
+
 .main-nav {
   display: flex;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 
-.nav-link {
-  font-size: 22px;
-  font-family: "Readex Pro", sans-serif;
-  text-decoration: none;
-  color: #4b5563;
+.nav-links {
+  display: flex;
+  gap: 48px;
+  list-style: none;
 }
 
-.nav-link-active {
-  color: #203858;
+.nav-link {
+  color: #4b5563;
+  font-family: "Readex Pro", sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.profile-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 /* Main content */
@@ -254,6 +281,7 @@ body {
   background-color: #f0f0f0;
 }
 
+
 /* Chatbot sections */
 .chatbot-intro-section {
   border: 8px solid #203858; /* Added outline */
@@ -354,4 +382,16 @@ body {
 
 .create-plan-button:active {
   transform: scale(0.95); /* Slightly shrinks the button when clicked */
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  width: 35px;
+  height: 35px;
 }

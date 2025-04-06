@@ -61,12 +61,115 @@
         });
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Function to get recipes based on user input
+        const getRecipes = async () => {
+          const userFoodInput = document.querySelector("#user-food-input").value;
+          if (!userFoodInput) {
+            alert("Please enter food items.");
+            return;
+          }
+
+          try {
+            const response = await fetch("/api/get_recipes", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ user_food: userFoodInput }),
+            });
+
+            const data = await response.json();
+            if (data.error) {
+              alert(data.error);
+            } else {
+              const recipesContainer = document.querySelector("#recipes-container");
+              recipesContainer.innerHTML = ""; // Clear previous results
+              data.recipes.forEach((recipe) => {
+                const recipeElement = document.createElement("p");
+                recipeElement.textContent = recipe;
+                recipesContainer.appendChild(recipeElement);
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching recipes:", error);
+          }
+        };
+
+        // Function to generate a meal plan
+        const generateMealPlan = async () => {
+          const mealPerWeekInput = document.querySelector("#meal-per-week-input").value || 7;
+
+          try {
+            const response = await fetch("/api/generate_meal_plan", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ meal_per_week: mealPerWeekInput }),
+            });
+
+            const data = await response.json();
+            const mealPlanContainer = document.querySelector("#meal-plan-container");
+            mealPlanContainer.textContent = data.meal_plan;
+          } catch (error) {
+            console.error("Error generating meal plan:", error);
+          }
+        };
+
+        // Event listeners for buttons
+        document.querySelector("#get-recipes-button").addEventListener("click", getRecipes);
+        document.querySelector("#generate-meal-plan-button").addEventListener("click", generateMealPlan);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mealSections = ["breakfast", "lunch", "dinner"];
+
+        // Function to collect meal lists and send them to the backend
+        const processMeals = async () => {
+          const mealData = {};
+
+          mealSections.forEach((meal) => {
+            const listItems = document.querySelectorAll(`#${meal}-list .list-item`);
+            mealData[meal] = Array.from(listItems).map((item) => item.textContent);
+          });
+
+          try {
+            const response = await fetch("/api/process_meals", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(mealData),
+            });
+
+            const data = await response.json();
+            const recipesContainer = document.querySelector("#recipes-container");
+            recipesContainer.innerHTML = ""; // Clear previous results
+            data.recipes.forEach((recipe) => {
+              const recipeElement = document.createElement("p");
+              recipeElement.textContent = recipe;
+              recipesContainer.appendChild(recipeElement);
+            });
+          } catch (error) {
+            console.error("Error processing meals:", error);
+          }
+        };
+
+        // Event listener for the "Process Meals" button
+        document.querySelector("#process-meals-button").addEventListener("click", processMeals);
+      });
+    </script>
   </head>
   <body>
     <div class="app-container">
       <header class="main-header">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dbc75aed921b8495801dfb8007da8ed02c2515f" alt="Home" class="home-icon" />
-        <nav class="main-nav">
+        <div class="logo-container">
+          <img src="https://www.pngkey.com/png/full/131-1314538_food-icon-png.png" alt="Let's Eat Logo" />
+          <h1 class="logo-text">Let's Eat!</h1>
+        </div>        <nav class="main-nav">
           <!-- HEADER! Section -->
             <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
             <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
@@ -166,6 +269,8 @@
         </section>
         <form action="{{ url_for('grocery') }}">
           <button class="create-plan-button" type="submit">CREATE YOUR PLAN</button>
+        </form>
+
         <br>
         <!-- CHATBOT Section (under contruction) -->
         <section class="chatbot-intro-section">
@@ -179,13 +284,25 @@
 
         <h2 class="chatbot-title">LETS EAT! CHAT BOT</h2>
 
-        <div class="chatbot-container"></div>
-
-        <div class="chatbot-input-container">
-          <input type="text" placeholder="ENTER HERE" class="chatbot-input" />
+        <div class="chatbot-container">
+            <h2>Get Recipes</h2>
+            <input type="text" id="user-food-input" placeholder="Enter food items (e.g., chicken, rice)" />
+            <button id="get-recipes-button">Get Recipes</button>
+            <div id="recipes-container"></div>
+  
+          <div>
+            <h2>Generate Meal Plan</h2>
+            <input type="number" id="meal-per-week-input" placeholder="Meals per week" />
+            <button id="generate-meal-plan-button">Generate Meal Plan</button>
+            <div id="meal-plan-container"></div>
+          </div>
+  
+          <div>
+            <h2>Process Meals</h2>
+            <button id="process-meals-button">Process Meals</button>
+            <div id="recipes-container"></div>
         </div>
-      </main>
-
+      </div>
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6bdb3dd4193024b4c0a2fd5c88b4420f69de88ce" alt="Flower" class="decoration-flower" />
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/355a73802b6344ebe3c7aa3674358aa480179979" alt="Banana Split" class="decoration-banana" />
     </div>
