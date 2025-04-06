@@ -12,8 +12,10 @@
   <body>
     <div class="page-container">
       <header class="main-header">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4a1998fed09fa2a55b31586d04581006a831e6e" alt="Home" class="logo" />
-        <nav class="main-nav">
+          <div class="logo-container">
+            <!--<img src="https://www.pngkey.com/png/full/131-1314538_food-icon-png.png" alt="Let's Eat Logo" />-->
+            <h1 class="logo-text">Let's Eat!</h1>
+          </div>        <nav class="main-nav">
           <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
           <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a>
           <a href="{{ url_for('planner') }}" class="nav-link nav-link-active">Meal Planner</a>

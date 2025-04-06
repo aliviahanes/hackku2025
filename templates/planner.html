@@ -65,8 +65,10 @@
   <body>
     <div class="app-container">
       <header class="main-header">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dbc75aed921b8495801dfb8007da8ed02c2515f" alt="Home" class="home-icon" />
-        <nav class="main-nav">
+        <div class="logo-container">
+          <img src="https://www.pngkey.com/png/full/131-1314538_food-icon-png.png" alt="Let's Eat Logo" />
+          <h1 class="logo-text">Let's Eat!</h1>
+        </div>        <nav class="main-nav">
           <!-- HEADER! Section -->
             <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
             <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
