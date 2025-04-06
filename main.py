@@ -8,6 +8,9 @@ from recipelist import RecipeList
 
 #meals_in_week = int(input('How many meals for a week?: '))
 user_food = input('What meals would you like recipes for?: (input as \'chicken pot pie, chicken fried rice, avocado toast\') ')
+usersugg = input(': ')
+
+Gemini().suggestion(usersugg)
 
 g_list = RecipeList(Gemini().cost_and_ing(user_food))
 
