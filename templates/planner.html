@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Planning</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='plannercss2.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='plannercss.css')}}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Readex+Pro&family=Press+Start+2P&display=swap"
       rel="stylesheet"
@@ -69,9 +69,9 @@
         <nav class="main-nav">
           <!-- HEADER! Section -->
             <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Meal plans</a>
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Grocery List</a>
+            <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
+            <a href="{{ url_for('planner') }}" class="nav-link nav-link-active">Meal Planner</a>
+            <a href="{{ url_for('grocery') }}" class="nav-link nav-link-active">Grocery List</a>
         </nav>
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/269bf4782d87c310f2e9e26d3b06a4cb27c1f8f7" alt="Search" class="search-icon" />
       </header>
@@ -83,7 +83,7 @@
             <p class="hero-description">
               Select recipes for breakfast, lunch, and dinner
             </p>
-            <button class="create-meal-button">CREATE YOUR MEAL</button>
+
           </div>
         </section>
 
@@ -164,7 +164,9 @@
             </div>
           </div>
         </section>
-        
+        <form action="{{ url_for('grocery') }}">
+          <button class="create-plan-button" type="submit">CREATE YOUR PLAN</button>
+        <br>
         <!-- CHATBOT Section (under contruction) -->
         <section class="chatbot-intro-section">
           <div class="chatbot-intro-content">
