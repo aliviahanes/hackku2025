@@ -14,10 +14,10 @@
       <header class="main-header">
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4a1998fed09fa2a55b31586d04581006a831e6e" alt="Home" class="logo" />
         <nav class="main-nav">
-          <a href="#" class="nav-link nav-link-active">Home</a>
-          <a href="#" class="nav-link">Recipes</a>
-          <a href="#" class="nav-link">Meal Plans</a>
-          <a href="#" class="nav-link">Grocery List</a>
+          <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
+          <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a>
+          <a href="{{ url_for('planner') }}" class="nav-link nav-link-active">Meal Planner</a>
+          <a href="{{ url_for('grocery') }}" class="nav-link nav-link-active">Grocery List</a>
         </nav>
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ecdc8477378817172451e92e235e97225314b2" alt="Search" class="search-icon" />
       </header>

@@ -20,9 +20,9 @@
           </div>
           <nav class="main-nav">
             <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Meal plans</a>
-            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Grocery List</a>
+            <a href="{{ url_for('recipes') }}" class="nav-link nav-link-active">Recipes</a> 
+            <a href="{{ url_for('planner') }}" class="nav-link nav-link-active">Meal Planner</a>
+            <a href="{{ url_for('grocery') }}" class="nav-link nav-link-active">Grocery List</a>
             </ul>
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ecdc8477378817172451e92e235e97225314b2" alt="User Profile" class="profile-icon" />
           </nav>
@@ -55,10 +55,10 @@
                   <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0a29394ebc19956578d67cb3688e3f1db5e8600" alt="Salad" class="recipe-food" />
                 </div>
                 <div class="recipe-details">
-                  <h3 class="recipe-title">Salad</h3>
+                  <h3 class="recipe-title">Caesar Salad</h3>
                   <p class="recipe-time">Time est: 20m</p>
                   <div class="recipe-footer">
-                    <p class="recipe-price">$ 20.2</p>
+                    <p class="recipe-price">$ 12.3</p>
                     <div class="like-button">
                       <svg
                         width="25"
@@ -92,10 +92,10 @@
                   />
                 </div>
                 <div class="recipe-details">
-                  <h3 class="recipe-title">Chicken Drumstick</h3>
+                  <h3 class="recipe-title">Soy Marinated Chicken</h3>
                   <p class="recipe-time">Time Est: 50m</p>
                   <div class="recipe-footer">
-                    <p class="recipe-price">$ 20.2</p>
+                    <p class="recipe-price">$ 7.99</p>
                     <div class="like-button">
                       <svg
                         width="25"
@@ -126,10 +126,10 @@
                   <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8e61f906a380516dc55be152155dc09412bdfe" alt="Pizza" class="recipe-food" />
                 </div>
                 <div class="recipe-details">
-                  <h3 class="recipe-title">Pizza</h3>
+                  <h3 class="recipe-title">Hawaian Pizza</h3>
                   <p class="recipe-time">Time Est: 30m</p>
                   <div class="recipe-footer">
-                    <p class="recipe-price">$ 20.2</p>
+                    <p class="recipe-price">$ 25.2</p>
                     <div class="like-button">
                       <svg
                         width="25"
@@ -160,10 +160,10 @@
                   <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d0336ad01debc1437dce50ced384f4e28924170" alt="Tacos" class="recipe-food" />
                 </div>
                 <div class="recipe-details">
-                  <h3 class="recipe-title">Tacos</h3>
+                  <h3 class="recipe-title">Birria Tacos</h3>
                   <p class="recipe-time">Time Est: 40m</p>
                   <div class="recipe-footer">
-                    <p class="recipe-price">$ 20.2</p>
+                    <p class="recipe-price">$ 18.1</p>
                     <div class="like-button">
                       <svg
                         width="25"
@@ -187,7 +187,7 @@
         </main>
 
         <section class="about-section">
-          <h2 class="about-title">About us</h2>
+          <h2 class="about-title">About US</h2>
           <p class="about-description">
             At Let's Eat we make cooking easier and more fun! Our platform helps
             you discover recipes based on the ingredients you already have, plan
