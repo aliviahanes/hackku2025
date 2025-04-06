@@ -1,4 +1,5 @@
 """
+medrge main?
 gemini class,
 use this to generate prompts
 """
