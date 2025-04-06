@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Eat - Meal Planning Made Easy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Readex+Pro&family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+  />
     </head>
   <body>
     <div class="page-container">
@@ -31,7 +35,7 @@
           <section class="hero-section">
             <h1 class="hero-title">Let's Eat!</h1>
             <form action="{{ url_for('planner') }}">
-              <button type="submit">START PLANNING YOUR MEALS</button>          </section>
+              <button class="start-plan-button" type="submit">START PLANNING YOUR MEALS</button>          </section>
 
           <section class="featured-recipes">
             <h2 class="section-title">Featured Recipes</h2>

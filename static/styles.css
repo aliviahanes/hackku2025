@@ -107,7 +107,7 @@ body {
 
 .hero-cta {
   color: #4b5563;
-  font-family: Roboto, sans-serif;
+  font-family: "Press Start 2P", cursive; /* Font style for the button */
   font-size: 24px;
   font-weight: 500;
   background-color: #fff4e3;
@@ -312,4 +312,27 @@ body {
   .about-description {
     font-size: 18px;
   }
+}
+.start-plan-button {
+  display: block;
+  margin: 40px auto; /* Centers the button horizontally */
+  background-color: #4b5563;
+  color: #ffffff;
+  font-family: "Press Start 2P", cursive; /* Font style for the button */
+  font-size: 28px; /* Slightly bigger font size */
+  padding: 16px 50px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.start-plan-button:hover {
+  background-color: #203858; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.start-plan-button:active {
+  transform: scale(0.95); /* Slightly shrinks the button when clicked */
 }

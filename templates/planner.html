@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Planning</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='plannercss2.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='plannercss.css')}}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Readex+Pro&family=Press+Start+2P&display=swap"
       rel="stylesheet"
@@ -83,7 +83,7 @@
             <p class="hero-description">
               Select recipes for breakfast, lunch, and dinner
             </p>
-            <button class="create-meal-button">CREATE YOUR MEAL</button>
+
           </div>
         </section>
 
@@ -164,7 +164,9 @@
             </div>
           </div>
         </section>
-        
+        <form action="{{ url_for('grocery') }}">
+          <button class="create-plan-button" type="submit">CREATE YOUR PLAN</button>
+        <br>
         <!-- CHATBOT Section (under contruction) -->
         <section class="chatbot-intro-section">
           <div class="chatbot-intro-content">
