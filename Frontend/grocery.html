@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="grocery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="main-header">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4a1998fed09fa2a55b31586d04581006a831e6e" alt="Home" class="logo" />
+        <nav class="main-nav">
+          <a href="#" class="nav-link nav-link-active">Home</a>
+          <a href="#" class="nav-link">Recipes</a>
+          <a href="#" class="nav-link">Meal Plans</a>
+          <a href="#" class="nav-link">Grocery List</a>
+        </nav>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ecdc8477378817172451e92e235e97225314b2" alt="Search" class="search-icon" />
+      </header>
+
+      <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .grocery-container {
+        max-width: none;
+        margin: 0 auto;
+        position: relative;
+        width: 1245px;
+        height: 679px;
+        border-radius: 40px;
+        background-color: #f4ffff;
+      }
+
+      @media (max-width: 991px) {
+        .grocery-container {
+          max-width: 991px;
+          width: 90%;
+          height: auto;
+          padding: 40px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .grocery-container {
+          max-width: 640px;
+          padding: 20px;
+        }
+      }
+
+      /* Top Left Corner */
+      .corner-top-left {
+        top: 22px;
+        position: absolute;
+        width: 79px;
+        height: 75px;
+        left: 17px;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left {
+          width: 40px;
+          height: 38px;
+        }
+      }
+
+      .corner-top-left-left {
+        position: absolute;
+        width: 16px;
+        height: 75px;
+        left: 0;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-left-top {
+        position: absolute;
+        width: 63px;
+        height: 15px;
+        top: 0;
+        left: 16px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left-top {
+          width: 32px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-left-middle-left {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 16px;
+        top: 30px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left-middle-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-left-middle {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 32px;
+        top: 15px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left-middle {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-left-middle-right {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 48px;
+        top: 45px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-left-middle-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      /* Top Right Corner */
+      .corner-top-right {
+        top: 22px;
+        position: absolute;
+        width: 79px;
+        height: 75px;
+        right: 17px;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right {
+          width: 40px;
+          height: 38px;
+        }
+      }
+
+      .corner-top-right-right {
+        position: absolute;
+        width: 16px;
+        height: 75px;
+        right: 0;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-right-top {
+        position: absolute;
+        width: 63px;
+        height: 15px;
+        top: 0;
+        right: 16px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right-top {
+          width: 32px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-right-middle-left {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 48px;
+        top: 30px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right-middle-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-right-middle {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 32px;
+        top: 15px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right-middle {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-top-right-middle-right {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 16px;
+        top: 45px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-top-right-middle-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      /* Bottom Left Corner */
+      .corner-bottom-left {
+        bottom: 22px;
+        position: absolute;
+        width: 79px;
+        height: 75px;
+        left: 17px;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left {
+          width: 40px;
+          height: 38px;
+        }
+      }
+
+      .corner-bottom-left-left {
+        position: absolute;
+        width: 16px;
+        height: 75px;
+        left: 0;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-left-bottom {
+        position: absolute;
+        width: 63px;
+        height: 15px;
+        bottom: 0;
+        left: 16px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left-bottom {
+          width: 32px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-left-middle-left {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 16px;
+        top: 30px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left-middle-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-left-middle {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 32px;
+        top: 45px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left-middle {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-left-middle-right {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        left: 48px;
+        top: 15px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-left-middle-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      /* Bottom Right Corner */
+      .corner-bottom-right {
+        bottom: 22px;
+        position: absolute;
+        width: 79px;
+        height: 75px;
+        right: 17px;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right {
+          width: 40px;
+          height: 38px;
+        }
+      }
+
+      .corner-bottom-right-right {
+        position: absolute;
+        width: 16px;
+        height: 75px;
+        right: 0;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-right-bottom {
+        position: absolute;
+        width: 63px;
+        height: 15px;
+        bottom: 0;
+        right: 16px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right-bottom {
+          width: 32px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-right-middle-left {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 48px;
+        top: 30px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right-middle-left {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-right-middle {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 32px;
+        top: 45px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right-middle {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .corner-bottom-right-middle-right {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        right: 16px;
+        top: 15px;
+        background-color: #bbcacf;
+      }
+
+      @media (max-width: 640px) {
+        .corner-bottom-right-middle-right {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      /* Title */
+      .grocery-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #3b516d;
+        font-family: "Press Start 2P", cursive;
+        font-size: 96px;
+        text-align: center;
+      }
+
+      @media (max-width: 991px) {
+        .grocery-title {
+          font-size: 64px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .grocery-title {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="grocery-container">
+      <!-- Top Left Corner -->
+      <section class="corner-top-left">
+        <div class="corner-top-left-left"></div>
+        <div class="corner-top-left-top"></div>
+        <div class="corner-top-left-middle-left"></div>
+        <div class="corner-top-left-middle"></div>
+        <div class="corner-top-left-middle-right"></div>
+      </section>
+
+      <!-- Top Right Corner -->
+      <section class="corner-top-right">
+        <div class="corner-top-right-right"></div>
+        <div class="corner-top-right-top"></div>
+        <div class="corner-top-right-middle-left"></div>
+        <div class="corner-top-right-middle"></div>
+        <div class="corner-top-right-middle-right"></div>
+      </section>
+
+      <!-- Bottom Left Corner -->
+      <section class="corner-bottom-left">
+        <div class="corner-bottom-left-left"></div>
+        <div class="corner-bottom-left-bottom"></div>
+        <div class="corner-bottom-left-middle-left"></div>
+        <div class="corner-bottom-left-middle"></div>
+        <div class="corner-bottom-left-middle-right"></div>
+      </section>
+
+      <!-- Bottom Right Corner -->
+      <section class="corner-bottom-right">
+        <div class="corner-bottom-right-right"></div>
+        <div class="corner-bottom-right-bottom"></div>
+        <div class="corner-bottom-right-middle-left"></div>
+        <div class="corner-bottom-right-middle"></div>
+        <div class="corner-bottom-right-middle-right"></div>
+      </section>
+
+      <!-- Title -->
+      <h1 class="grocery-title">GROCERY LIST</h1>
+    </main>
+  <!-- Code injected by live-server -->
+<script>
+
+</script>
+</body>
+</html>
+      <main class="main-content">
+        <section class="grocery-list-container">
+          <div class="grocery-list-wrapper">
+            <div class="grocery-items-grid">
+              <article class="grocery-item">
+                <div class="item-icon">🧀</div>
+                <div class="item-details">
+                  <h2 class="item-name">Mozzarella Cheese</h2>
+                  <p class="item-quantity">250g</p>
+                </div>
+              </article>
+
+              <article class="grocery-item">
+                <div class="item-icon">🍅</div>
+                <div class="item-details">
+                  <h2 class="item-name">Tomato Sauce</h2>
+                  <p class="item-quantity">500ml</p>
+                </div>
+              </article>
+
+              <article class="grocery-item">
+                <div class="item-icon">🍝</div>
+                <div class="item-details">
+                  <h2 class="item-name">Lasagna Sheets</h2>
+                  <p class="item-quantity">1 pack</p>
+                </div>
+              </article>
+
+              <article class="grocery-item">
+                <div class="item-icon">🥩</div>
+                <div class="item-details">
+                  <h2 class="item-name">Ground Beef</h2>
+                  <p class="item-quantity">500g</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="summary-section">
+          <div class="total-amount-container">
+            <h2 class="total-amount-title">Total Amount</h2>
+            <div class="cost-container">
+              <div class="cost-wrapper">
+                <div class="cost-icon"></div>
+                <div class="cost-details">
+                  <p class="cost-label">Est. Cost</p>
+                  <p class="cost-value">$30</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="export-container">
+            <div class="export-info">
+              <h2 class="export-title">Export List to PDF</h2>
+              <p class="export-description">Download your grocery list HERE!</p>
+            </div>
+            <button class="export-button">export pdf</button>
+            
+          </div>
+        </section>
+      </main>
+    </div>
+
+    
