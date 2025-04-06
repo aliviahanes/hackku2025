@@ -281,6 +281,7 @@ body {
   background-color: #f0f0f0;
 }
 
+
 /* Chatbot sections */
 .chatbot-intro-section {
   border: 8px solid #203858; /* Added outline */
@@ -393,11 +394,4 @@ body {
 .logo-container img {
   width: 35px;
   height: 35px;
-}
-
-.logo-text {
-  color: #203858;
-  font-family: "Readex Pro", sans-serif;
-  font-size: 22px;
-  font-weight: normal;
 }

@@ -200,5 +200,67 @@
         </section>
       </div>
     </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to get recipes based on user input
+  const getRecipes = async () => {
+    const userFoodInput = document.querySelector("#user-food-input").value;
+    if (!userFoodInput) {
+      alert("Please enter food items.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/get_recipes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_food: userFoodInput }),
+      });
+
+      const data = await response.json();
+      if (data.error) {
+        alert(data.error);
+      } else {
+        const recipesContainer = document.querySelector("#recipes-container");
+        recipesContainer.innerHTML = ""; // Clear previous results
+        data.recipes.forEach((recipe) => {
+          const recipeElement = document.createElement("p");
+          recipeElement.textContent = recipe;
+          recipesContainer.appendChild(recipeElement);
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+    }
+  };
+
+  // Function to generate a meal plan
+  const generateMealPlan = async () => {
+    const mealPerWeekInput = document.querySelector("#meal-per-week-input").value || 7;
+
+    try {
+      const response = await fetch("/api/generate_meal_plan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ meal_per_week: mealPerWeekInput }),
+      });
+
+      const data = await response.json();
+      const mealPlanContainer = document.querySelector("#meal-plan-container");
+      mealPlanContainer.textContent = data.meal_plan;
+    } catch (error) {
+      console.error("Error generating meal plan:", error);
+    }
+  };
+
+  // Event listeners for buttons
+  document.querySelector("#get-recipes-button").addEventListener("click", getRecipes);
+  document.querySelector("#generate-meal-plan-button").addEventListener("click", generateMealPlan);
+});
+</script>
   </body>
 </html>

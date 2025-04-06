@@ -3,10 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  background-image: url(./static/img/landing/Landing_page.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .page-container {
