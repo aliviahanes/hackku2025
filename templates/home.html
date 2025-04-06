@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Eat - Meal Planning Made Easy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-  </head>
+    </head>
   <body>
     <div class="page-container">
       <div class="content-wrapper">
@@ -15,10 +15,10 @@
             <h1 class="logo-text">Home</h1>
           </div>
           <nav class="main-nav">
-            <ul class="nav-links">
-              <li><a href="#recipes" class="nav-link">Recipes</a></li>
-              <li><a href="#meal-plans" class="nav-link">Meal Plans</a></li>
-              <li><a href="#grocery-list" class="nav-link">Grocery List</a></li>
+            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Home</a>
+            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Recipes</a> <!-- they all redirect to home rn-->
+            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Meal plans</a>
+            <a href="{{ url_for('home') }}" class="nav-link nav-link-active">Grocery List</a>
             </ul>
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ecdc8477378817172451e92e235e97225314b2" alt="User Profile" class="profile-icon" />
           </nav>
@@ -30,8 +30,8 @@
         <main class="main-content">
           <section class="hero-section">
             <h1 class="hero-title">Let's Eat!</h1>
-            <button class="hero-cta" onclick="window.location.href='/planner'">START PLANNING YOUR MEALS</button> <!--//SEND IT TO THE RGHT PLACE!!!-->
-          </section>
+            <form action="{{ url_for('planner') }}">
+              <button type="submit">START PLANNING YOUR MEALS</button>          </section>
 
           <section class="featured-recipes">
             <h2 class="section-title">Featured Recipes</h2>
