@@ -40,6 +40,11 @@ class RecipeList:
         self.dic_sorted_list(self.smaller_list)
 
     def dic_sorted_list(self, ing_list):
+        #for item in ing_list:
+            #if '*' in item:    #if its formatted like 1. **Onion:** price
+                   #nitem = item[6:]
+                   #nitem.replace('*', '')
+        
         for item in ing_list:
             if '*' in item:
              #   item = item[5:] # get rid of num and first *

@@ -1,0 +1,28 @@
+{
+  "name": "hackku25_app",
+  "version": "1.0.0",
+  "description": "Hackku 2025 App",
+  "keywords": [
+    "hackku25",
+    "web",
+    "app"
+  ],
+  "homepage": "https://github.com/aliviahanes/hackku2025#readme",
+  "bugs": {
+    "url": "https://github.com/aliviahanes/hackku2025/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliviahanes/hackku2025.git"
+  },
+  "license": "ISC",
+  "author": "Lucia, Marisca, Sydney & Alivia",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^35.1.4"
+  }
+}
