@@ -1,0 +1,352 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Readex Pro", sans-serif;
+  }
+  
+  /* App container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ddfdff;
+    position: relative;
+  }
+  
+  /* Header */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 170px;
+  }
+  
+  .home-icon,
+  .search-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .nav-link {
+    font-size: 22px;
+    font-family: "Readex Pro", sans-serif;
+    text-decoration: none;
+    color: #4b5563;
+  }
+  
+  .nav-link-active {
+    color: #203858;
+  }
+  
+  /* Main content */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 170px;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    background-color: #f4ffff;
+    border-radius: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1245px;
+    margin-bottom: 60px;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .hero-title {
+    color: #203858;
+    font-size: 64px;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+  }
+  
+  .hero-description {
+    color: #4b5563;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .create-meal-button {
+    background-color: #7b557e;
+    color: #fff4e3;
+    font-size: 24px;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Meal sections */
+  .meal-section {
+    background-color: #f4ffff;
+    border-radius: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1324px;
+    margin-bottom: 60px;
+  }
+  
+  .meal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .meal-title {
+    color: #203858;
+    font-size: 32px;
+    font-family: "Press Start 2P", cursive;
+  }
+  
+  .meal-subtitle {
+    color: #000;
+    font-size: 14px;
+  }
+  
+  .meal-selection {
+    display: flex;
+    gap: 40px;
+  }
+  
+  /* Recipe input area */
+  .recipe-input-area {
+    flex: 1;
+  }
+  
+  .input-container {
+    background-color: #fff4e3;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-input {
+    width: 100%;
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .clear-button {
+    flex: 1;
+    border: 1px solid #a7b7cd;
+    color: #a7b7cd;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    flex: 1;
+    background-color: #a7b7cd;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Recipe options */
+  .recipe-options {
+    flex: 1;
+  }
+  
+  .recipe-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-icon-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .recipe-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .recipe-name {
+    font-size: 20px;
+  }
+  
+  /* Chatbot sections */
+  .chatbot-intro-section {
+    background-color: #f4ffff;
+    border-radius: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: 841px;
+    margin-bottom: 60px;
+  }
+  
+  .chatbot-intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .chatbot-intro-title {
+    color: #3b516d;
+    font-size: 48px;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+  }
+  
+  .chatbot-intro-description {
+    color: #3b516d;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 5.4px;
+  }
+  
+  .chatbot-title {
+    color: #3b516d;
+    font-size: 36px;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .chatbot-container {
+    background-color: #f4ffff;
+    border-radius: 40px;
+    padding: 40px;
+    width: 100%;
+    max-width: 926px;
+    margin-bottom: 60px;
+  }
+  
+  .chatbot-input-container {
+    background-color: #fff4e3;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 824px;
+    margin-bottom: 60px;
+  }
+  
+  .chatbot-input {
+    width: 100%;
+    background-color: transparent;
+    font-size: 36px;
+    color: #3b516d;
+    text-align: center;
+    letter-spacing: 5.4px;
+    border: none;
+    outline: none;
+  }
+  
+  /* Decorative images */
+  .decoration-flower {
+    position: absolute;
+    left: 138px;
+    bottom: 40px;
+    width: 228px;
+    height: 235px;
+  }
+  
+  .decoration-banana {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 324px;
+    height: 324px;
+  }
+  
+  /* Media queries */
+  @media (max-width: 991px) {
+    .main-header {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  
+    .main-nav {
+      display: none;
+    }
+  
+    .main-content {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  
+    .hero-title {
+      font-size: 48px;
+    }
+  
+    .meal-selection {
+      flex-direction: column;
+    }
+  
+    .chatbot-intro-title {
+      font-size: 36px;
+    }
+  
+    .chatbot-intro-description {
+      font-size: 24px;
+    }
+  
+    .decoration-flower,
+    .decoration-banana {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .main-header {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .main-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .hero-title {
+      font-size: 32px;
+    }
+  
+    .chatbot-intro-title {
+      font-size: 24px;
+    }
+  
+    .chatbot-intro-description {
+      font-size: 18px;
+    }
+  }
+  
